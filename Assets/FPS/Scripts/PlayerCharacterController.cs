@@ -254,7 +254,8 @@ public class PlayerCharacterController : MonoBehaviour
         }
 
         // character movement handling
-        bool isSprinting = m_InputHandler.GetSprintInputHeld();
+        // character moves only when sprint + forward button pressed
+        bool isSprinting = m_InputHandler.GetSprintInputHeld() && (m_InputHandler.GetMoveInput().z > 0);
         {
             if (isSprinting)
             {
