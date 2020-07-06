@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 548}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 114
+  controlID: 109
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 30
+  controlID: 110
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,20 +364,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/FPS/Prefabs/Weapons
+    - Assets/FPS/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/FPS/Prefabs/Weapons
+  - Assets/FPS/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\UnityProjects\PremadeFPSProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 559}
-    m_SelectedIDs: 58330000
-    m_LastClickedID: 13144
-    m_ExpandedIDs: 000000000a30000084300000943200005233000072330000243500008e35000090360000e43800001c3c0000543c0000683d000000ca9a3b
+    scrollPos: {x: 0, y: 499}
+    m_SelectedIDs: 78330000
+    m_LastClickedID: 13176
+    m_ExpandedIDs: 000000000e300000883000009a32000058330000783300002a3500009435000096360000ea380000243c00005c3c0000703d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -405,7 +405,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a3000008430000094320000523300007233000028340000243500008e35000090360000e43800001c3c0000543c0000683d0000
+    m_ExpandedIDs: 000000000e300000883000009a32000058330000783300002a3500009435000096360000ea380000243c00005c3c0000703d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -457,7 +457,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 60}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 199
 --- !u!114 &15
@@ -524,9 +524,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7cd40200
-      m_LastClickedID: 0
-      m_ExpandedIDs: dcfbffff2c41000090410000
+      m_SelectedIDs: 96410000
+      m_LastClickedID: 16790
+      m_ExpandedIDs: dcfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -581,9 +581,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.7956495, y: 8.988672, z: -27.656782}
+    m_Target: {x: -2.799367, y: 3.152598, z: -2.4607863}
     speed: 2
-    m_Value: {x: -2.7956495, y: 8.988672, z: -27.656782}
+    m_Value: {x: -2.799367, y: 3.152598, z: -2.4607863}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -611,9 +611,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.17986947, y: -0.23055705, z: 0.043409824, w: -0.95530415}
+    m_Target: {x: 0.009726199, y: 0.6992283, z: -0.009513973, w: 0.71476907}
     speed: 2
-    m_Value: {x: -0.17986947, y: -0.23055705, z: 0.043409824, w: -0.95530415}
+    m_Value: {x: 0.009726199, y: 0.6992283, z: -0.009513973, w: 0.71476907}
   m_Size:
     m_Target: 3.5892084
     speed: 2

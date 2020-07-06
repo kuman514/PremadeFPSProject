@@ -13,11 +13,15 @@ public class Jetpack : MonoBehaviour
     [Header("Parameters")]
     [Tooltip("Whether the jetpack is unlocked at the begining or not")]
     public bool isJetpackUnlockedAtStart = false;
+    [Tooltip("Whether the jetpack is hard mid-air jump or soft ascending")]
+    public bool isBurstPush = false;
     [Tooltip("The strength with which the jetpack pushes the player up")]
     public float jetpackAcceleration = 7f;
     [Range(0f, 1f)]
     [Tooltip("This will affect how much using the jetpack will cancel the gravity value, to start going up faster. 0 is not at all, 1 is instant")]
     public float jetpackDownwardVelocityCancelingFactor = 1f;
+    [Tooltip("The value that multiplies the jetpack force (Burst Push Only)")]
+    public float jetpackBurstPushForceMultiplier = 3f;
 
     [Header("Durations")]
     [Tooltip("Time it takes to consume all the jetpack fuel")]
@@ -28,6 +32,8 @@ public class Jetpack : MonoBehaviour
     public float refillDurationInTheAir = 5f;
     [Tooltip("Delay after last use before starting to refill")]
     public float refillDelay = 1f;
+    [Tooltip("The value that multiplies the consuming duration (Burst Push Only)")]
+    public float jetpackBurstPushConsumeMultiplier = 20f;
 
     [Header("Audio")]
     [Tooltip("Sound played when using the jetpack")]
@@ -75,9 +81,21 @@ public class Jetpack : MonoBehaviour
         }
 
         // jetpack usage
-        bool jetpackIsInUse = m_CanUseJetpack && isJetpackUnlocked  && currentFillRatio > 0f && m_InputHandler.GetJumpInputHeld();
-        if(jetpackIsInUse)
+        bool jetpackIsInUse;
+
+        if (isBurstPush)
         {
+            jetpackIsInUse = m_CanUseJetpack && isJetpackUnlocked && currentFillRatio > 0f && m_InputHandler.GetJumpInputDown();
+        }
+        else
+        {
+            jetpackIsInUse = m_CanUseJetpack && isJetpackUnlocked && currentFillRatio > 0f && m_InputHandler.GetJumpInputHeld();
+        }
+        
+        if(jetpackIsInUse && !isBurstPush)
+        {
+            // Soft ascending
+
             // store the last time of use for refill delay
             m_LastTimeOfUse = Time.time;
 
@@ -97,6 +115,39 @@ public class Jetpack : MonoBehaviour
 
             // consume fuel
             currentFillRatio = currentFillRatio - (Time.deltaTime / consumeDuration);
+
+            for (int i = 0; i < jetpackVfx.Length; i++)
+            {
+                var emissionModulesVFX = jetpackVfx[i].emission;
+                emissionModulesVFX.enabled = true;
+            }
+
+            if (!audioSource.isPlaying)
+                audioSource.Play();
+        }
+        else if(jetpackIsInUse && isBurstPush)
+        {
+            // Hard mid-air jump
+
+            // store the last time of use for refill delay
+            m_LastTimeOfUse = Time.time;
+
+            float totalAcceleration = jetpackAcceleration;
+
+            // cancel out gravity
+            totalAcceleration += m_PlayerCharacterController.gravityDownForce;
+
+            if (m_PlayerCharacterController.characterVelocity.y < 0f)
+            {
+                // handle making the jetpack compensate for character's downward velocity with bonus acceleration
+                totalAcceleration += ((-m_PlayerCharacterController.characterVelocity.y / Time.deltaTime) * jetpackDownwardVelocityCancelingFactor) * jetpackBurstPushForceMultiplier;
+            }
+
+            // apply the acceleration to character's velocity
+            m_PlayerCharacterController.characterVelocity += Vector3.up * totalAcceleration * Time.deltaTime;
+
+            // consume fuel
+            currentFillRatio = currentFillRatio - (Time.deltaTime * jetpackBurstPushConsumeMultiplier / consumeDuration);
 
             for (int i = 0; i < jetpackVfx.Length; i++)
             {
