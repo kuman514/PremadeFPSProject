@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 224}
   m_MaxSize: {x: 8004, y: 4024}
   vertical: 0
-  controlID: 31
+  controlID: 91
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -457,7 +457,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 60}
+    m_ScrollPosition: {x: 0, y: 56}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 199
 --- !u!114 &15
@@ -526,7 +526,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 96410000
       m_LastClickedID: 16790
-      m_ExpandedIDs: dcfbffff
+      m_ExpandedIDs: dcfbffff96410000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

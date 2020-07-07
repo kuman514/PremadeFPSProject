@@ -135,16 +135,11 @@ public class Jetpack : MonoBehaviour
             float totalAcceleration = jetpackAcceleration;
 
             // cancel out gravity
-            totalAcceleration += m_PlayerCharacterController.gravityDownForce;
+            // start by canceling out the vertical component of our velocity
+            m_PlayerCharacterController.characterVelocity = new Vector3(m_PlayerCharacterController.characterVelocity.x, 0f, m_PlayerCharacterController.characterVelocity.z);
 
-            if (m_PlayerCharacterController.characterVelocity.y < 0f)
-            {
-                // handle making the jetpack compensate for character's downward velocity with bonus acceleration
-                totalAcceleration += ((-m_PlayerCharacterController.characterVelocity.y / Time.deltaTime) * jetpackDownwardVelocityCancelingFactor) * jetpackBurstPushForceMultiplier;
-            }
-
-            // apply the acceleration to character's velocity
-            m_PlayerCharacterController.characterVelocity += Vector3.up * totalAcceleration * Time.deltaTime;
+            // then, add the jumpSpeed value upwards
+            m_PlayerCharacterController.characterVelocity += Vector3.up * totalAcceleration * jetpackBurstPushForceMultiplier;
 
             // consume fuel
             currentFillRatio = currentFillRatio - (Time.deltaTime * jetpackBurstPushConsumeMultiplier / consumeDuration);
