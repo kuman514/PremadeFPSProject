@@ -85,7 +85,7 @@ public class Jetpack : MonoBehaviour
 
         if (isBurstPush)
         {
-            jetpackIsInUse = m_CanUseJetpack && isJetpackUnlocked && currentFillRatio > 0f && m_InputHandler.GetJumpInputDown();
+            jetpackIsInUse = m_CanUseJetpack && isJetpackUnlocked && currentFillRatio >= 1f && m_InputHandler.GetJumpInputDown();
         }
         else
         {
