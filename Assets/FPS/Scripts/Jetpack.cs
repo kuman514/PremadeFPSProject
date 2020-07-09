@@ -33,7 +33,7 @@ public class Jetpack : MonoBehaviour
     [Tooltip("Delay after last use before starting to refill")]
     public float refillDelay = 1f;
     [Tooltip("The value that multiplies the consuming duration (Burst Push Only)")]
-    public float jetpackBurstPushConsumeMultiplier = 20f;
+    public int jetpackBurstPushCapacity = 1;
 
     [Header("Audio")]
     [Tooltip("Sound played when using the jetpack")]
@@ -142,7 +142,7 @@ public class Jetpack : MonoBehaviour
             m_PlayerCharacterController.characterVelocity += Vector3.up * totalAcceleration * jetpackBurstPushForceMultiplier;
 
             // consume fuel
-            currentFillRatio = currentFillRatio - (Time.deltaTime * jetpackBurstPushConsumeMultiplier / consumeDuration);
+            currentFillRatio = currentFillRatio - (1f / jetpackBurstPushCapacity);
 
             for (int i = 0; i < jetpackVfx.Length; i++)
             {
