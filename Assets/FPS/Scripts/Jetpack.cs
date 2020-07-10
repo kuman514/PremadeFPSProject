@@ -38,6 +38,8 @@ public class Jetpack : MonoBehaviour
     [Header("Audio")]
     [Tooltip("Sound played when using the jetpack")]
     public AudioClip jetpackSFX;
+    [Tooltip("Sound played when mid-air jumping")]
+    public AudioClip midairjumpSFX;
 
     bool m_CanUseJetpack;
     PlayerCharacterController m_PlayerCharacterController;
@@ -64,14 +66,22 @@ public class Jetpack : MonoBehaviour
 
         currentFillRatio = 1f;
 
-        audioSource.clip = jetpackSFX;
-        audioSource.loop = true;
+        if (isBurstPush)
+        {
+            audioSource.clip = midairjumpSFX;
+            audioSource.loop = false;
+        }
+        else
+        {
+            audioSource.clip = jetpackSFX;
+            audioSource.loop = true;
+        }
     }
 
     void Update()
     {
         // jetpack can only be used if not grounded and jump has been pressed again once in-air
-        if(isPlayergrounded())
+        if (isPlayergrounded())
         {
             m_CanUseJetpack = false;
         }
@@ -85,14 +95,14 @@ public class Jetpack : MonoBehaviour
 
         if (isBurstPush)
         {
-            jetpackIsInUse = m_CanUseJetpack && isJetpackUnlocked && currentFillRatio >= 1f && m_InputHandler.GetJumpInputDown();
+            jetpackIsInUse = m_CanUseJetpack && isJetpackUnlocked && currentFillRatio >= (1f / jetpackBurstPushCapacity) && m_InputHandler.GetJumpInputDown();
         }
         else
         {
             jetpackIsInUse = m_CanUseJetpack && isJetpackUnlocked && currentFillRatio > 0f && m_InputHandler.GetJumpInputHeld();
         }
-        
-        if(jetpackIsInUse && !isBurstPush)
+
+        if (jetpackIsInUse && !isBurstPush)
         {
             // Soft ascending
 
@@ -125,7 +135,7 @@ public class Jetpack : MonoBehaviour
             if (!audioSource.isPlaying)
                 audioSource.Play();
         }
-        else if(jetpackIsInUse && isBurstPush)
+        else if (jetpackIsInUse && isBurstPush)
         {
             // Hard mid-air jump
 
@@ -171,7 +181,7 @@ public class Jetpack : MonoBehaviour
             // keeps the ratio between 0 and 1
             currentFillRatio = Mathf.Clamp01(currentFillRatio);
 
-            if (audioSource.isPlaying)
+            if (audioSource.isPlaying && !isBurstPush)
                 audioSource.Stop();
         }
     }
