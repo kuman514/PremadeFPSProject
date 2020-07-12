@@ -658,7 +658,7 @@ MonoBehaviour:
   shootType: 1
   projectilePrefab: {fileID: 6867404450943131836, guid: bd82c1fe6e1ee8644b580e9d415189b7,
     type: 3}
-  delayBetweenShots: 0.06
+  delayBetweenShots: 0.2
   bulletSpreadAngle: 0
   bulletsPerShot: 1
   recoilForce: 1
@@ -666,7 +666,7 @@ MonoBehaviour:
   aimOffset: {x: 0, y: 0, z: 0}
   ammoReloadRate: Infinity
   ammoReloadDelay: 0.6
-  maxAmmo: 15
+  maxAmmo: 2
   maxChargeDuration: 2
   ammoUsedOnStartCharge: 1
   ammoUsageRateWhileCharging: 2

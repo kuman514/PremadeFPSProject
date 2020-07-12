@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 119
+  controlID: 91
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 50
+  controlID: 92
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 51
+  controlID: 93
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -267,13 +267,13 @@ MonoBehaviour:
     height: 673
   m_MinSize: {x: 204, y: 224}
   m_MaxSize: {x: 4004, y: 4024}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,20 +364,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/FPS/Prefabs/Projectiles
+    - Assets/FPS/Audio/SFX/Weapons
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/FPS/Prefabs/Projectiles
+  - Assets/FPS/Audio/SFX/Weapons
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\UnityProjects\PremadeFPSProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 467}
-    m_SelectedIDs: 841f0000
-    m_LastClickedID: 8068
-    m_ExpandedIDs: 0000000064130000de13000078150000f0150000ae160000ce16000080180000ea180000ec190000401c00007a1f0000b21f0000c620000000ca9a3b
+    scrollPos: {x: 0, y: 347}
+    m_SelectedIDs: 20360000
+    m_LastClickedID: 13856
+    m_ExpandedIDs: 00000000123000008c300000263200009e3200005c3300007c3300002e350000983500009a360000ee380000763b00002a3c0000623c0000763d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -405,7 +405,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000064130000de13000078150000f0150000ae160000ce16000080180000ea180000ec190000401c0000c61e00007a1f0000b21f0000c6200000
+    m_ExpandedIDs: 00000000123000008c300000263200009e3200005c3300007c3300002e350000983500009a360000ee3800002a3c0000623c0000763d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -523,24 +523,24 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 32}
-      m_SelectedIDs: 9c33ffff
-      m_LastClickedID: -52324
-      m_ExpandedIDs: dcfbffffa224000006250000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: c0570100
+      m_LastClickedID: 88000
+      m_ExpandedIDs: a619ffffb019ffffb219ffffb619ffffc819ffffce19ffffda19ffffe619ffffec19ffff745701009e570100bc570100c0570100d4570100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: HealthBar Pivot
-        m_OriginalName: HealthBar Pivot
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 40704
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -576,14 +576,14 @@ MonoBehaviour:
     height: 653
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: d69a67902db7f994ca099bec79d22ce1
-  m_SceneLighting: 1
+  m_SceneLighting: 0
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -15.128641, y: -5.464327, z: -54.99354}
+    m_Target: {x: 0, y: 1.4337049, z: 0}
     speed: 2
-    m_Value: {x: -15.128641, y: -5.464327, z: -54.99354}
+    m_Value: {x: 0, y: 1.4337049, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -611,13 +611,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.050906558, y: -0.9490313, z: 0.21432175, w: 0.22542018}
+    m_Target: {x: 0.074148275, y: -0.6006548, z: 0.056087207, w: 0.7940845}
     speed: 2
-    m_Value: {x: 0.050906558, y: -0.9490313, z: 0.21432175, w: 0.22542018}
+    m_Value: {x: 0.074148275, y: -0.6006548, z: 0.056087207, w: 0.7940845}
   m_Size:
-    m_Target: 42.483383
+    m_Target: 3.291595
     speed: 2
-    m_Value: 42.483383
+    m_Value: 3.291595
   m_Ortho:
     m_Target: 0
     speed: 2
